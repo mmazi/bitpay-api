@@ -24,6 +24,7 @@ package si.mazi.bitpay;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
+import si.mazi.bitpay.client.Bitpay;
 import si.mazi.bitpay.dto.Invoice;
 import si.mazi.bitpay.dto.TransactionSpeed;
 import si.mazi.rescu.BasicAuthCredentials;

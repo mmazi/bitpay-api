@@ -19,7 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package si.mazi.bitpay;
+package si.mazi.bitpay.client;
 
 import si.mazi.bitpay.dto.Invoice;
 import si.mazi.bitpay.dto.TransactionSpeed;
