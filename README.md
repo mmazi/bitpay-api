@@ -9,11 +9,16 @@ https://bitpay.com/bitcoin-payment-gateway-api
 
 May be used in this manner (see BitpayTest.java):
 
+    // Create the client
     Bitpay bitpay = RestProxyFactory.createProxy(Bitpay.class, "https://bitpay.com");
     BasicAuthCredentials credentials = new BasicAuthCredentials("*** REPLACE WITH YOUR API KEY ***", "");
 
+    // Use it: get invoice info
     Invoice paidInvoice = bitpay.getInvoceInfo(credentials, "*** REPLACE WITH AN INVOICE ID ***");
     System.out.println("Paid invoice = " + paidInvoice);
+
+    // Create a new invoice
+    Invoice invoice = bitpay.createInvoice(...);
 
 
 ### Server for IPN handling
