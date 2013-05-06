@@ -36,32 +36,32 @@ import java.math.BigDecimal;
  */
 public class BitpayTest {
 
-  private static final Logger log = LoggerFactory.getLogger(BitpayTest.class);
+    private static final Logger log = LoggerFactory.getLogger(BitpayTest.class);
 
-  private static final String API_KEY = "*** REPLACE WITH YOUR API KEY ***";
+    private static final String API_KEY = "*** REPLACE WITH YOUR API KEY ***";
 
-  @Test
-  public void testBitpay() throws Exception {
+    @Test
+    public void testBitpay() throws Exception {
 
-    Bitpay bitpay = RestProxyFactory.createProxy(Bitpay.class, "https://bitpay.com");
-    BasicAuthCredentials credentials = new BasicAuthCredentials(API_KEY, "");
+        Bitpay bitpay = RestProxyFactory.createProxy(Bitpay.class, "https://bitpay.com");
+        BasicAuthCredentials credentials = new BasicAuthCredentials(API_KEY, "");
 
-    Invoice paidInvoice = bitpay.getInvoceInfo(credentials, "*** REPLACE WITH AN INVOICE ID ***");
-    log.debug("Paid invoice = {}", paidInvoice);
+        Invoice paidInvoice = bitpay.getInvoceInfo(credentials, "*** REPLACE WITH AN INVOICE ID ***");
+        log.debug("Paid invoice = {}", paidInvoice);
 
-    Invoice invoice = bitpay.createInvoice(
-        credentials,
-        new BigDecimal("0.06"),
-        "EUR",
-        null, null, TransactionSpeed.high, false, null, "test-123", "A ladder", null, true, "Jaka Skok", null, null,
-        null, null, null, null, "matijamazi@gmail.com", null
-    );
+        Invoice invoice = bitpay.createInvoice(
+                credentials,
+                new BigDecimal("0.06"),
+                "EUR",
+                null, null, TransactionSpeed.high, false, null, "test-123", "A ladder", null, true, "Jaka Skok", null, null,
+                null, null, null, null, "matijamazi@gmail.com", null
+        );
 
-    log.debug("invoice = {}", invoice);
+        log.debug("invoice = {}", invoice);
 
-    Invoice invoiceInfo = bitpay.getInvoceInfo(credentials, invoice.getId());
+        Invoice invoiceInfo = bitpay.getInvoceInfo(credentials, invoice.getId());
 
-    log.debug("invoice info = {}", invoiceInfo);
+        log.debug("invoice info = {}", invoiceInfo);
 
-  }
+    }
 }

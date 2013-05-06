@@ -32,12 +32,18 @@ package si.mazi.bitpay.dto;
  * @author Matija Mazi <br/>
  */
 public enum TransactionSpeed {
-  /** 0 confirmations - confirmed as soon as full payment is received on the bitcoin network */
-  high,
+    /**
+     * 0 confirmations - confirmed as soon as full payment is received on the bitcoin network
+     */
+    high,
 
-  /** 1 confirmation */
-  medium,
+    /**
+     * 1 confirmation
+     */
+    medium,
 
-  /** 6 confirmations */
-  low
+    /**
+     * 6 confirmations
+     */
+    low
 }
