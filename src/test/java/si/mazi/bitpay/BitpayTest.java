@@ -54,7 +54,7 @@ public class BitpayTest {
                 new BigDecimal("0.06"),
                 "EUR",
                 null, null, TransactionSpeed.high, false, null, "test-123", "A ladder", null, true, "Jaka Skok", null, null,
-                null, null, null, null, "matijamazi@gmail.com", null
+                null, null, null, null, "johndoe@example.com", null
         );
 
         log.debug("invoice = {}", invoice);
