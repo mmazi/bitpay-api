@@ -34,6 +34,7 @@ This has been tested with JBoss AS 7.1.
 2. Create an API key at https://bitpay.com/api-keys
 3. Get the client code: `git clone git://github.com/mmazi/bitpay-api.git`
 4. Either build it (`mvn clean install`) and use it in your maven project, or simply copy any code you need to your project.
+5. Change the code to use your API key (see above or BitpayTest.java).
 
 This depends on https://github.com/mmazi/rescu which is a light-weight REST/json client library, but may be easily
 adapted to use another library like RestEasy or Jersey.
