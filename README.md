@@ -7,7 +7,7 @@ https://bitpay.com/bitcoin-payment-gateway-api
 
 ### Client
 
-May be used in this manner (see BitpayTest.java):
+May be used in the following manner (see BitpayTest.java):
 
     // Create the client
     Bitpay bitpay = RestProxyFactory.createProxy(Bitpay.class, "https://bitpay.com");
@@ -24,4 +24,5 @@ May be used in this manner (see BitpayTest.java):
 ### Server for IPN handling
 
 The project packs into a deployable war that includes an IPN handler at `rest/bitpay/ipn`.
+This has been tested with JBoss AS 7.1.
 
