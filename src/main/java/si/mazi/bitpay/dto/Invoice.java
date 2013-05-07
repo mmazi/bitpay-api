@@ -32,39 +32,18 @@ import java.util.Date;
  */
 public class Invoice {
 
-    private final String id;
-    private final String url;
-    private final Object posData;
-    private final Status status;
-    private final BigDecimal price;
-    private final String currency;
-    private final BigDecimal btcPrice;
-    private final Date invoiceTime;
-    private final Date expirationTime;
-    private final Date currentTime;
+    @JsonProperty("id") private String id;
+    @JsonProperty("url") private String url;
+    @JsonProperty("posData") private Object posData;
+    @JsonProperty("status") private Status status;
+    @JsonProperty("price") private BigDecimal price;
+    @JsonProperty("currency") private String currency;
+    @JsonProperty("btcPrice") private BigDecimal btcPrice;
+    @JsonProperty("invoiceTime") private Date invoiceTime;
+    @JsonProperty("expirationTime") private Date expirationTime;
+    @JsonProperty("currentTime") private Date currentTime;
 
-    public Invoice(
-            @JsonProperty("id") String id,
-            @JsonProperty("url") String url,
-            @JsonProperty("posData") Object posData,
-            @JsonProperty("status") Status status,
-            @JsonProperty("price") BigDecimal price,
-            @JsonProperty("currency") String currency,
-            @JsonProperty("btcPrice") BigDecimal btcPrice,
-            @JsonProperty("invoiceTime") Date invoiceTime,
-            @JsonProperty("expirationTime") Date expirationTime,
-            @JsonProperty("currentTime") Date currentTime) {
-
-        this.id = id;
-        this.url = url;
-        this.posData = posData;
-        this.status = status;
-        this.price = price;
-        this.currency = currency;
-        this.btcPrice = btcPrice;
-        this.invoiceTime = invoiceTime;
-        this.expirationTime = expirationTime;
-        this.currentTime = currentTime;
+    public Invoice() {
     }
 
     public String getId() {
@@ -179,6 +158,7 @@ public class Invoice {
         INVALID;
 
         @JsonCreator
+        @org.codehaus.jackson.annotate.JsonCreator
         public static Status getInstance(String name) {
 
             return valueOf(name.toUpperCase());

@@ -64,6 +64,7 @@ public interface Bitpay {
             @FormParam("notificationURL") String notificationURL,
             @FormParam("transactionSpeed") TransactionSpeed transactionSpeed,
             @FormParam("fullNotifications") boolean fullNotifications,
+            @FormParam("notificationEmail") String notificationEmail,
             // Optional Order Handling fields
             @FormParam("redirectURL") String redirectURL,
             // Optional Buyer Information to display

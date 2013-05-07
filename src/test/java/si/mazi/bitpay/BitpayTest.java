@@ -50,15 +50,21 @@ public class BitpayTest {
         Invoice paidInvoice = bitpay.getInvoceInfo(credentials, "*** REPLACE WITH AN INVOICE ID ***");
         log.debug("Paid invoice = {}", paidInvoice);
 
+        String myHost = "my.host.or.ip";
+
         Invoice invoice = bitpay.createInvoice(
                 credentials,
                 new BigDecimal("0.06"),
                 "EUR",
-                null, null, TransactionSpeed.high, false, null, "test-123", "A ladder", null, true, "Jaka Skok", null, null,
+                "test 3", "https://" + myHost + "/bitpay-demo/rest/bitpay/ipn",
+                TransactionSpeed.high, true, "merchant.notification.address@example.com",
+                null,
+                "test-3", "A ladder", null, true, "Jaka Skok", null, null,
                 null, null, null, null, "johndoe@example.com", null
         );
 
         log.debug("invoice = {}", invoice);
+        log.debug("invoice URL = {}", invoice.getUrl());
 
         Invoice invoiceInfo = bitpay.getInvoceInfo(credentials, invoice.getId());
 
