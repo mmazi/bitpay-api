@@ -28,6 +28,7 @@
                 <artifactId>logback-classic</artifactId>
                 <version>1.0.12</version>
             </dependency>
+            <!-- Use the old Jackson for Resteasy compatibility so this works in JBoss 7.1. -->
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>jackson-core-asl</artifactId>
